@@ -1,5 +1,5 @@
 {
-  "name": "Nestednet/gocardless-laravel",
+  "name": "nestednet/gocardless-laravel",
   "description": "GoCardless Pro PHP Client package integration for Laravel.",
   "keywords": [
     "php",
