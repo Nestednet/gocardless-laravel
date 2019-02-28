@@ -30,7 +30,7 @@ class GocardlessServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__.'/../config/gocardless.php' => config_path('gocardless.php'),
+            __DIR__.'/config/gocardless.php' => config_path('gocardless.php'),
         ], 'config');
     }
 
@@ -39,7 +39,7 @@ class GocardlessServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__ . '/../config/gocardless.php', 'gocardless');
+        $this->mergeConfigFrom(__DIR__ . '/config/gocardless.php', 'gocardless');
 
         $this->registerGocardless();
     }
