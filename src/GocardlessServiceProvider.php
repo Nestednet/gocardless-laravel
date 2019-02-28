@@ -23,11 +23,24 @@ use Illuminate\Support\ServiceProvider;
 
 class GocardlessServiceProvider extends ServiceProvider
 {
+
+    /**
+     * {@inheritDoc}
+     */
+    public function boot()
+    {
+        $this->publishes([
+            __DIR__.'/../config/gocardless.php' => config_path('gocardless.php'),
+        ], 'config');
+    }
+
     /**
      * {@inheritDoc}
      */
     public function register()
     {
+        $this->mergeConfigFrom(__DIR__ . '/../config/gocardless.php', 'gocardless');
+
         $this->registerGocardless();
     }
 
