@@ -27,5 +27,10 @@ return [
     /**
      * Your Gocardless API token.
      */
-    'token' => env('GOCARDLESS_ENVIRONMENT'),
+    'token' => env('GOCARDLESS_TOKEN'),
+
+    /**
+     * Your Gocardless webhook secret endpoint.
+     */
+    'webhook_endpoint_secret' => env('GOCARDLESS_WEBHOOK_ENDPOINT_SECRET'),
 ];
