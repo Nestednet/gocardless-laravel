@@ -43,7 +43,7 @@ return [
 
         /**
          * Define here the jobs that should run when a gocardless webhook hits your application.
-         * The key is: {event_resource}_{eve dnt_action}
+         * The key is: {event_resource}_{event_action}
          */
         'jobs' => [
           // 'payments_confirmed' => \App\Jobs\GocardlessWebhooks\HandleConfirmedPayment::class

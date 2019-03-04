@@ -33,8 +33,8 @@ class VerifySignature
     protected function isValid(string $signature, string $payload, string $configKey = null) : bool
     {
         $secret = ($configKey) ?
-            config('webhook_endpoint_secret_'.$configKey) :
-            config('webhook_endpoint_secret');
+            config('webhooks.webhook_endpoint_secret_'.$configKey) :
+            config('webhooks.webhook_endpoint_secret');
 
         if (empty($secret)) {
             throw WebhookFailed::noSecretKeyProvided();
