@@ -29,8 +29,16 @@ return [
      */
     'token' => env('GOCARDLESS_TOKEN'),
 
-    /**
-     * Your Gocardless webhook secret endpoint.
-     */
-    'webhook_endpoint_secret' => env('GOCARDLESS_WEBHOOK_ENDPOINT_SECRET'),
+    'webhooks' => [
+
+        /**
+         * Your Gocardless webhook secret endpoint.
+         */
+        'webhook_endpoint_secret' => env('GOCARDLESS_WEBHOOK_ENDPOINT_SECRET'),
+
+        /**
+         * Your Gocardless webhook model. The class should be or extend GocardlessWebhookCall.
+         */
+        'model' => Nestednet\Gocardless\Laravel\GocardlessWebhookCall::class,
+    ],
 ];
