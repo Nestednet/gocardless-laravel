@@ -27,5 +27,26 @@ return [
     /**
      * Your Gocardless API token.
      */
-    'token' => env('GOCARDLESS_ENVIRONMENT'),
+    'token' => env('GOCARDLESS_TOKEN'),
+
+    'webhooks' => [
+
+        /**
+         * Your Gocardless webhook secret endpoint.
+         */
+        'webhook_endpoint_secret' => env('GOCARDLESS_WEBHOOK_ENDPOINT_SECRET'),
+
+        /**
+         * Your Gocardless webhook model. The class should be or extend GocardlessWebhookCall.
+         */
+        'model' => Nestednet\Gocardless\GocardlessWebhookCall::class,
+
+        /**
+         * Define here the jobs that should run when a gocardless webhook hits your application.
+         * The key is: {event_resource}_{event_action}
+         */
+        'jobs' => [
+            // 'payments_confirmed' => \App\Jobs\GocardlessWebhooks\HandleConfirmedPayment::class
+        ],
+    ],
 ];
