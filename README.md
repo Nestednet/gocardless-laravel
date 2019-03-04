@@ -10,7 +10,7 @@ GoCardless Pro PHP Client package integration for Laravel.
 
 **2.** Publish the configuration file
 ```bash
-$ php artisan vendor:publish --provider="Nestednet\Gocardless\Laravel\GocardlessServiceProvider"
+$ php artisan vendor:publish --provider="Nestednet\Gocardless\GocardlessServiceProvider"
 ```
 
 **3.** Review the configuration file
