@@ -33,7 +33,7 @@ class GocardlessWebhookCall extends Model
             throw WebhookFailed::missingAction($this);
         }
 
-        event("gocardless-webhooks::{$this->type}", $this);
+        event("gocardless-webhooks::{$this->resource_type}_{$this->action}", $this);
 
         $jobClass = $this->determineJobClass($this->resource_type, $this->action);
 
