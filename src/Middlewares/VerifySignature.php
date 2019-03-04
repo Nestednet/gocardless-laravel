@@ -6,12 +6,12 @@
  * Time: 13:06
  */
 
-namespace Nestednet\Gocardless\Laravel\Middlewares;
+namespace Nestednet\Gocardless\Middlewares;
 
 use Closure;
 use Exception;
 use GoCardlessPro\Webhook;
-use Nestednet\Gocardless\Laravel\Exceptions\WebhookFailed;
+use Nestednet\Gocardless\Exceptions\WebhookFailed;
 
 class VerifySignature
 {

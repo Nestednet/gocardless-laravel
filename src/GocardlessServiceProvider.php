@@ -16,7 +16,7 @@
  * @link       https://nested.net
  */
 
-namespace Nestednet\Gocardless\Laravel;
+namespace Nestednet\Gocardless;
 
 use GoCardlessPro\Client;
 use Illuminate\Support\Facades\Route;
@@ -48,7 +48,7 @@ class GocardlessServiceProvider extends ServiceProvider
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritDoc} d
      */
     public function register()
     {

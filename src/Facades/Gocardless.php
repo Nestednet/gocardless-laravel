@@ -16,7 +16,7 @@
  * @link       https://nested.net
  */
 
-namespace Nestednet\Gocardless\Laravel\Facades;
+namespace Nestednet\Gocardless\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

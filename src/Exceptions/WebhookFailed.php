@@ -6,10 +6,10 @@
  * Time: 13:07
  */
 
-namespace Nestednet\Gocardless\Laravel\Exceptions;
+namespace Nestednet\Gocardless\Exceptions;
 
 use Exception;
-use Nestednet\Gocardless\Laravel\GocardlessWebhookCall;
+use Nestednet\Gocardless\GocardlessWebhookCall;
 
 class WebhookFailed extends Exception
 {

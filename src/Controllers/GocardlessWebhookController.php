@@ -6,7 +6,7 @@
  * Time: 13:07
  */
 
-namespace Nestednet\Gocardless\Laravel\Controllers;
+namespace Nestednet\Gocardless\Controllers;
 
 use Exception;
 use Illuminate\Http\Request;

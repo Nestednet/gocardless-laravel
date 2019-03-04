@@ -39,11 +39,11 @@ return [
         /**
          * Your Gocardless webhook model. The class should be or extend GocardlessWebhookCall.
          */
-        'model' => Nestednet\Gocardless\Laravel\GocardlessWebhookCall::class,
+        'model' => Nestednet\Gocardless\GocardlessWebhookCall::class,
 
         /**
          * Define here the jobs that should run when a gocardless webhook hits your application.
-         * The key is: {event_resource}_{event_action}
+         * The key is: {event_resource}_{eve dnt_action}
          */
         'jobs' => [
           // 'payments_confirmed' => \App\Jobs\GocardlessWebhooks\HandleConfirmedPayment::class
