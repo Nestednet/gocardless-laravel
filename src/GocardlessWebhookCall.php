@@ -8,7 +8,8 @@
 
 namespace Nestednet\Gocardless;
 
-
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 use Nestednet\Gocardless\Exceptions\WebhookFailed;
 
 class GocardlessWebhookCall extends Model

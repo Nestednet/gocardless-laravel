@@ -33,8 +33,8 @@ class VerifySignature
     protected function isValid(string $signature, string $payload, string $configKey = null) : bool
     {
         $secret = ($configKey) ?
-            config('webhooks.webhook_endpoint_secret_'.$configKey) :
-            config('webhooks.webhook_endpoint_secret');
+            config('gocardless.webhooks.webhook_endpoint_secret_'.$configKey) :
+            config('gocardless.webhooks.webhook_endpoint_secret');
 
         if (empty($secret)) {
             throw WebhookFailed::noSecretKeyProvided();

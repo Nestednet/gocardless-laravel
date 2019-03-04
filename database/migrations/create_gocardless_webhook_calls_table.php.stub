@@ -15,7 +15,8 @@ class CreateGocardlessWebhookCallsTable extends Migration
         Schema::create('gocardless_webhook_calls', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->string('type')->nullable();
+            $table->string('resource_type')->nullable();
+            $table->string('action')->nullable();
             $table->text('payload')->nullable();
             $table->text('exception')->nullable();
 
