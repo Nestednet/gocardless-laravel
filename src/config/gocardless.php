@@ -40,5 +40,12 @@ return [
          * Your Gocardless webhook model. The class should be or extend GocardlessWebhookCall.
          */
         'model' => Nestednet\Gocardless\Laravel\GocardlessWebhookCall::class,
+
+        /**
+         * Your Gocardless jobs that will handle the events.
+         */
+        'jobs' => [
+          // 'payments_confirmed' => \App\Jobs\GocardlessWebhooks\HandleConfirmedPayment::class
+        ],
     ],
 ];
