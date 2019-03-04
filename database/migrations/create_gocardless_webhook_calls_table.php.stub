@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class create_gocardless_webhooks_calls_table extends Migration
+class create_gocardless_webhook_calls_table extends Migration
 {
     /**
      * Run the migrations.
