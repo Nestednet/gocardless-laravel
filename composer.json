@@ -31,10 +31,10 @@
   "extra": {
     "laravel": {
       "providers": [
-        "Nestednet\\Gocardless\\Laravel\\GocardlessServiceProvider"
+        "Nestednet\\Gocardless\\GocardlessServiceProvider"
       ],
       "aliases": {
-        "Gocardless": "Nestednet\\Gocardless\\Laravel\\Gocardless"
+        "Gocardless": "Nestednet\\Gocardless\\Facades\\Gocardless"
       }
     }
   },
