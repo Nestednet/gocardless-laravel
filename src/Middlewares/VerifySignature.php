@@ -19,11 +19,11 @@ class VerifySignature
     {
         $signature = $request->header('Webhook-Signature');
 
-        if (! $signature) {
+        if (!$signature) {
             throw WebhookFailed::missingSignature();
         }
 
-        if (! $this->isValid($signature, $request->getContent(), $request->route('configKey'))) {
+        if (!$this->isValid($signature, $request->getContent(), $request->route('configKey'))) {
             throw WebhookFailed::invalidSignature($signature);
         }
 
@@ -33,8 +33,7 @@ class VerifySignature
     protected function isValid(string $signature, string $payload, string $configKey = null) : bool
     {
         $secret = ($configKey) ?
-            config('gocardless.webhooks.webhook_endpoint_secret_'.$configKey) :
-            config('gocardless.webhooks.webhook_endpoint_secret');
+            config('gocardless.webhooks.webhook_endpoint_secret_' . $configKey) : config('gocardless.webhooks.webhook_endpoint_secret');
 
         if (empty($secret)) {
             throw WebhookFailed::noSecretKeyProvided();

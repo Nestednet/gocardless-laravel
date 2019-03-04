@@ -46,7 +46,7 @@ return [
          * The key is: {event_resource}_{event_action}
          */
         'jobs' => [
-          // 'payments_confirmed' => \App\Jobs\GocardlessWebhooks\HandleConfirmedPayment::class
+            // 'payments_confirmed' => \App\Jobs\GocardlessWebhooks\HandleConfirmedPayment::class
         ],
     ],
 ];

@@ -25,7 +25,7 @@ class GocardlessWebhookController extends Controller
         $payload = $request->input();
         $modelClass = config('gocardless.webhooks.model');
 
-        foreach($payload['events'] as $event) {
+        foreach ($payload['events'] as $event) {
             $gocardlessWebhookCall = $modelClass::create([
                 'resource_type' => $event['resource_type'] ?? '',
                 'action' => $event['action'] ?? '',
