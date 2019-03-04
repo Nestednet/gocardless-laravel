@@ -28,7 +28,7 @@ class FacadeTest extends TestCase
     {
         $facade = new ReflectionClass('Illuminate\Support\Facades\Facade');
 
-        $reflection = new ReflectionClass('Nestednet\Gocardless\Laravel\Facades\Gocardless');
+        $reflection = new ReflectionClass('Nestednet\Gocardless\Facades\Gocardless');
 
         $this->assertTrue($reflection->isSubclassOf($facade));
     }
@@ -36,7 +36,7 @@ class FacadeTest extends TestCase
     /** @test */
     public function it_can_test_it_is_a_facade_accessor()
     {
-        $reflection = new ReflectionClass('Nestednet\Gocardless\Laravel\Facades\Gocardless');
+        $reflection = new ReflectionClass('Nestednet\Gocardless\Facades\Gocardless');
 
         $method = $reflection->getMethod('getFacadeAccessor');
         $method->setAccessible(true);
