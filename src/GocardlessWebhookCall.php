@@ -68,7 +68,7 @@ class GocardlessWebhookCall extends Model
 
         $jobClassKey = "{$formattedResourceType}_{$formattedAction}";
 
-        return config("gocardless.webhooks.{$jobClassKey}", "");
+        return config("gocardless.webhooks..jobs.{$jobClassKey}", "");
     }
 
     protected function clearException()
