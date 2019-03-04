@@ -11,7 +11,7 @@ namespace Nestednet\Gocardless\Laravel\Controllers;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use Spatie\StripeWebhooks\Middlewares\VerifySignature;
+use Nestednet\Gocardless\Middlewares\VerifySignature;
 
 class GocardlessWebhookController extends Controller
 {
@@ -31,5 +31,14 @@ class GocardlessWebhookController extends Controller
             'action' => $payload['action'] ?? '',
             'payload' => $payload,
         ]);
+
+        try {
+            $gocardlessWebhookCall->process();
+        } catch (Exception $exception) {
+            $gocardlessWebhookCall->saveException($exception);
+            throw $exception;
+        }
+
+        return response()->json(['message' => 'ok']);
     }
 }

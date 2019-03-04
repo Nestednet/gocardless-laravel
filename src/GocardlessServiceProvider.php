@@ -19,6 +19,7 @@
 namespace Nestednet\Gocardless\Laravel;
 
 use GoCardlessPro\Client;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 
 class GocardlessServiceProvider extends ServiceProvider
@@ -32,6 +33,18 @@ class GocardlessServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/config/gocardless.php' => config_path('gocardless.php'),
         ], 'config');
+
+        if (! class_exists('CreateGocardlessWebhookClassTable')) {
+            $timestamp = date('Y_m_d_His', time());
+
+            $this->publishes([
+                __DIR__.'/../database/migrations/create_gocardless_webhook_calls_table.php.stub' => database_path('migrations/'.$timestamp.'_create_gocardless_webhook_calls_table.php'),
+            ], 'migrations');
+        }
+
+        Route::macro('gocardlessWebhooks', function ($url) {
+            return Route::post($url, '\Nestednet\Gocardless\Controllers\GocardlessWebhookController');
+        });
     }
 
     /**
@@ -55,7 +68,7 @@ class GocardlessServiceProvider extends ServiceProvider
     }
 
     /**
-     * Register the Stripe API class.
+     * Register the Gocardless API class.
      *
      * @return void
      */
