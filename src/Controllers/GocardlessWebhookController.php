@@ -23,20 +23,21 @@ class GocardlessWebhookController extends Controller
     public function __invoke(Request $request)
     {
         $payload = $request->input();
-
         $modelClass = config('gocardless.webhooks.model');
 
-        $gocardlessWebhookCall = $modelClass::create([
-            'resource_type' => $payload['resource_type'] ?? '',
-            'action' => $payload['action'] ?? '',
-            'payload' => $payload,
-        ]);
+        foreach($payload['events'] as $event) {
+            $gocardlessWebhookCall = $modelClass::create([
+                'resource_type' => $event['resource_type'] ?? '',
+                'action' => $event['action'] ?? '',
+                'payload' => $event,
+            ]);
 
-        try {
-            $gocardlessWebhookCall->process();
-        } catch (Exception $exception) {
-            $gocardlessWebhookCall->saveException($exception);
-            throw $exception;
+            try {
+                $gocardlessWebhookCall->process();
+            } catch (Exception $exception) {
+                $gocardlessWebhookCall->saveException($exception);
+                //Improve the way we handle the exceptions here, add the option to notify the exceptions.
+            }
         }
 
         return response()->json(['message' => 'ok']);
