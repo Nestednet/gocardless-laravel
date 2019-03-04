@@ -1,5 +1,6 @@
 # gocardless-laravel
 [![Build Status](https://travis-ci.com/Nestednet/gocardless-laravel.svg?branch=master)](https://travis-ci.com/Nestednet/gocardless-laravel)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Nestednet/gocardless-laravel/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Nestednet/gocardless-laravel/?branch=master)
 [![Latest Stable Version](https://poser.pugx.org/nestednet/gocardless-laravel/v/stable)](https://packagist.org/packages/nestednet/gocardless-laravel)
 [![Latest Unstable Version](https://poser.pugx.org/nestednet/gocardless-laravel/v/unstable)](https://packagist.org/packages/nestednet/gocardless-laravel)
 [![License](https://poser.pugx.org/nestednet/gocardless-laravel/license)](https://packagist.org/packages/nestednet/gocardless-laravel)
