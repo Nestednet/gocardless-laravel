@@ -23,7 +23,7 @@ class WebhookFailed extends Exception
         return new static("The signature: {$signature} found in the header is invalid.");
     }
 
-    public static function secretNotSet()
+    public static function noSecretKeyProvided()
     {
         return new static('The webhook secret key is not set.');
     }
